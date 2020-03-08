@@ -9,7 +9,6 @@ _addon = xbmcaddon.Addon()
 _id = _addon.getAddonInfo('id')
 
 def get_params():
-    xbmc.log(sys.argv, level=xbmc.LOGNOTICE)
     for arg in sys.argv:
         if arg == 'script.py':
             pass
@@ -28,5 +27,7 @@ if __name__ == '__main__':
                 '&skinWidgetPath={0}.path)'.format(_id))
         xbmc.executebuiltin(call, wait=True)
         
-        name = xbmc.getInfoLabel('Skin.String({}}.name'.format(_id))
-        _addon.setSettingString('{}}.name'.format(_id), name)
+        name = xbmc.getInfoLabel('Skin.String({}.name)'.format(_id))
+        path = xbmc.getInfoLabel('Skin.String({}.path)'.format(_id))
+        _addon.setSettingString('{}.name'.format(_id), name)
+        _addon.setSettingString('{}.path'.format(_id), path)
