@@ -1,1 +1,1 @@
-screensaver.netflix
+screensaver.arctic.mirage
