@@ -18,15 +18,33 @@ def get_params():
                 return arg_split
 
 
+def change_label():
+    call = 'Skin.SetString({}.name)'.format(_id)
+    return call
+
+def choose_path():
+    call = ('RunScript(script.skinshortcuts,'
+            'type=widgets'
+            '&showNone=False'
+            '&skinWidgetName={0}.name'
+            '&skinWidgetPath={0}.path)'.format(_id))
+    return call
+
+
 if __name__ == '__main__':
-    if get_params() == ['mode', 'choose']:
-        call = ('RunScript(script.skinshortcuts,'
-                'type=widgets'
-                '&showNone=False'
-                '&skinWidgetName={0}.name'
-                '&skinWidgetPath={0}.path)'.format(_id))
-        xbmc.executebuiltin(call, wait=True)
+    params = get_params()
+    
+    if params[0] == 'mode':
+        call = None
         
+        if params[1] == 'label':
+            call = change_label()
+        elif params[1] == 'choose':
+            call = choose_path()
+
+        if call:
+            xbmc.executebuiltin(call, wait=True)
+            
         name = xbmc.getInfoLabel('Skin.String({}.name)'.format(_id))
         path = xbmc.getInfoLabel('Skin.String({}.path)'.format(_id))
         _addon.setSettingString('{}.name'.format(_id), name)

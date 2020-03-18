@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
     <category label="General">
-        <setting type="action" id="screensaver.arctic.mirage.name" label="Choose path to use" option="close" action="RunScript(screensaver.arctic.mirage, mode=choose)" />
+        
+        <setting type="action" label="Choose path..." option="close" action="RunScript(screensaver.arctic.mirage, mode=choose)" />
+        <setting type="action" label="Widget Label" id="screensaver.arctic.mirage.name" option="close" action="RunScript(screensaver.arctic.mirage, mode=label)" enabled="!eq(1,)" />
         <setting type="text" id="screensaver.arctic.mirage.path" visible="false" />
     </category>
 </settings>
