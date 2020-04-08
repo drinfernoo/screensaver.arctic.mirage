@@ -31,13 +31,12 @@ class Screensaver(xbmcgui.WindowXMLDialog):
     
     
     def __init__(self, *args, **kwargs):
-        self.exit_monitor = None
+        self.exit_monitor = self.ExitMonitor(self.exit)
         self.path = _addon.getSettingString('screensaver.arctic.mirage.path')
         utils.log(self.path)
     
     def onInit(self):
         self.character = self.getControl(1298)
-        self.exit_monitor = self.ExitMonitor(self.exit)
         
         if self.path and self.exit_monitor:
             self.setProperty('screensaver.arctic.mirage.path', self.path)
