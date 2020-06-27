@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
-    <category label="General">
-        
-        <setting type="action" label="Choose path..." option="close" action="RunScript(screensaver.arctic.mirage, mode=choose)" />
-        <setting type="action" label="Widget Label" id="screensaver.arctic.mirage.name" option="close" action="RunScript(screensaver.arctic.mirage, mode=label)" enabled="!eq(1,)" />
-        <setting type="text" id="screensaver.arctic.mirage.path" visible="false" />
+    <category label="$ADDON[screensaver.arctic.mirage 32000]">
+        <setting type="action" label="$ADDON[screensaver.arctic.mirage 32001]" option="close" action="RunScript(screensaver.arctic.mirage, mode=choose)" />
+        <setting type="action" label="$ADDON[screensaver.arctic.mirage 32002]" option="close" action="RunScript(screensaver.arctic.mirage, mode=label)" enabled="!eq(1,)" />
     </category>
 </settings>
 

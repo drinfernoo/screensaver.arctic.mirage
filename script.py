@@ -46,8 +46,3 @@ if __name__ == '__main__':
 
         if call:
             xbmc.executebuiltin(call, wait=True)
-            
-        name = xbmc.getInfoLabel('Skin.String({}.name)'.format(_id))
-        path = xbmc.getInfoLabel('Skin.String({}.path)'.format(_id))
-        utils.set_setting_string('{}.name'.format(_id), name)
-        utils.set_setting_string('{}.path'.format(_id), path)
