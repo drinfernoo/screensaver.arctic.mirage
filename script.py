@@ -5,6 +5,8 @@ import xbmcaddon
 import os
 import sys
 
+from resources.lib import utils
+
 _addon = xbmcaddon.Addon()
 _id = _addon.getAddonInfo('id')
 
@@ -47,5 +49,5 @@ if __name__ == '__main__':
             
         name = xbmc.getInfoLabel('Skin.String({}.name)'.format(_id))
         path = xbmc.getInfoLabel('Skin.String({}.path)'.format(_id))
-        _addon.setSettingString('{}.name'.format(_id), name)
-        _addon.setSettingString('{}.path'.format(_id), path)
+        utils.set_setting_string('{}.name'.format(_id), name)
+        utils.set_setting_string('{}.path'.format(_id), path)

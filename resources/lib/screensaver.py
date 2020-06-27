@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 import xbmc
-import xbmcaddon
 import xbmcgui
 
 import random
 import os
 
 from resources.lib import utils
-
-_addon = xbmcaddon.Addon()
 
 
 class Screensaver(xbmcgui.WindowXMLDialog):
@@ -32,7 +29,7 @@ class Screensaver(xbmcgui.WindowXMLDialog):
     
     def __init__(self, *args, **kwargs):
         self.exit_monitor = self.ExitMonitor(self.exit)
-        self.path = _addon.getSettingString('screensaver.arctic.mirage.path')
+        self.path = utils.get_setting_string('screensaver.arctic.mirage.path')
         utils.log(self.path)
     
     def onInit(self):

@@ -8,3 +8,17 @@ _id = _addon.getAddonInfo('id').decode('utf-8')
 def log(msg, level=xbmc.LOGDEBUG):
     message = '{}: {}'.format(_id, msg)
     xbmc.log(msg=msg, level=level)
+
+
+def get_setting_string(setting):
+    try:
+        return _addon.getSettingString(setting)
+    except:
+        return '{}'.format(_addon.getSetting(setting))
+
+
+def set_setting_string(setting, value):
+    try:
+        return _addon.setSettingString(setting, value)
+    except:
+        return _addon.setSetting(setting, value)
