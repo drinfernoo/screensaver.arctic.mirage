@@ -2,9 +2,6 @@
 import xbmc
 import xbmcgui
 
-import random
-import os
-
 from resources.lib import utils
 
 
@@ -37,14 +34,6 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         
         if self.path and self.exit_monitor:
             self.setProperty('screensaver.arctic.mirage.path', self.path)
-            
-            while not self.exit_monitor.abortRequested():
-                factor = random.randrange(80) / 100.0
-                x = 160 + int(400 * factor)
-                y = int(self.character.getY())
-                self.character.setPosition(x, y)
-                
-                xbmc.sleep(20000)
 
     def exit(self):
         if self.exit_monitor:
