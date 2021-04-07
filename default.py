@@ -6,7 +6,7 @@ import sys
 from resources.lib.screensaver import Screensaver
 
 _addon = xbmcaddon.Addon()
-_path = _addon.getAddonInfo('path').decode('utf-8')
+_path = _addon.getAddonInfo('path')
 _xml = 'screensaver-arctic-mirage.xml'
 
 
