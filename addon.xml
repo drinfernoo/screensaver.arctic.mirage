@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="screensaver.arctic.mirage" name="Arctic Mirage" version="1.7" provider-name="drinfernoo">
+<addon id="screensaver.arctic.mirage" name="Arctic Mirage" version="1.8" provider-name="drinfernoo">
     <extension point="xbmc.ui.screensaver" library="default.py"/>
     <extension point="xbmc.python.script" library="script.py"/>
     <extension point="xbmc.addon.metadata">
